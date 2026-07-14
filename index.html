@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alm. Recursos criativos, digitais e projetos personalizados</title>
+<meta content="Recursos criativos, materiais digitais e projetos personalizados desenvolvidos com identidade e acabamento profissional." name="description"/>
+<!-- Google Fonts: Fraunces (títulos) + Poppins (texto corrido) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  /* ============================================================
+     VARIÁVEIS DE MARCA. Alm
+     Substitua os valores aqui quando a identidade visual completa
+     for enviada. Toda a paleta e tipografia do site depende só
+     destas variáveis.
+     ============================================================ */
+  :root{
+    --coral:     #D85A30; /* cor principal / CTAs */
+    --coral-dark:#B94A24;
+    --ambar:     #EF9F27; /* destaque / acento */
+    --pink:      #D4537E; /* acento. personalizados / festas */
+    --teal:      #1D9E75; /* acento. pedagógico / escolar */
+    --roxo:      #7F77DD; /* acento. ministério infantil / igreja */
+    --grafite:   #2C2C2A; /* texto principal / base neutra */
+
+    --creme:     #FBF4EC;
+    --creme-2:   #F3E9DC;
+    --branco:    #FFFFFF;
+
+    --font-titulo: 'Fraunces', serif;
+    --font-texto:  'Poppins', sans-serif;
+
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 32px;
+
+    --shadow-soft: 0 20px 50px -20px rgba(44,44,42,0.18);
+    --shadow-btn:  0 12px 24px -10px rgba(216,90,48,0.55);
+
+    --max-width: 1180px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    font-family: var(--font-texto);
+    color: var(--grafite);
+    background: var(--creme);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,h2,h3,h4{
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    line-height: 1.12;
+    margin: 0 0 .5em;
+    color: var(--grafite);
+  }
+  p{ margin: 0 0 1em; }
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width: 100%; display:block; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button{ font-family: var(--font-texto); cursor:pointer; border:none; }
+
+  .container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  section{ position: relative; }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size: .8rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color: var(--coral);
+    margin-bottom: 14px;
+  }
+  .eyebrow::before{
+    content:',';
+    font-family: var(--font-titulo);
+    font-size:1.6rem;
+    line-height:0;
+    color: var(--coral);
+  }
+
+  /* ---------- BOTÕES ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding: 17px 30px;
+    border-radius: 999px;
+    font-weight:600;
+    font-size: 1rem;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    white-space: nowrap;
+  }
+  .btn-primary{
+    background: var(--coral);
+    color: var(--branco);
+    box-shadow: var(--shadow-btn);
+  }
+  .btn-primary:hover{ background: var(--coral-dark); transform: translateY(-3px); }
+  .btn-secondary{
+    background: transparent;
+    color: var(--grafite);
+    border: 1.5px solid var(--grafite);
+  }
+  .btn-secondary:hover{ background: var(--grafite); color: var(--branco); transform: translateY(-3px); }
+  .btn-whatsapp{
+    background: #21B35A;
+    color:#fff;
+    box-shadow: 0 12px 24px -10px rgba(33,179,90,.55);
+  }
+  .btn-whatsapp:hover{ background:#1c9a4c; transform: translateY(-3px); }
+  .btn-block{ width:100%; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position: sticky;
+    top:0;
+    z-index: 500;
+    background: rgba(251,244,236,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(44,44,42,0.08);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 16px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color: var(--grafite);
+  }
+  .logo img{
+    width:132px;
+    height:52px;
+    object-fit:contain;
+    border-radius:8px;
+    background:#000;
+  }
+  /* SUBSTITUIR: círculo com vírgula é o placeholder do símbolo da marca.
+     Quando o arquivo de logo definitivo chegar, troque este <span> por <img>. */
+  .logo-mark{
+    width: 40px; height:40px;
+    border-radius:50%;
+    background: linear-gradient(135deg, var(--ambar), var(--coral));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family: var(--font-titulo); font-size:1.5rem; font-weight:700;
+    flex-shrink:0;
+  }
+  .nav-links{
+    display:flex;
+    gap: 28px;
+    font-size:.92rem;
+    font-weight:500;
+  }
+  .nav-links a{ opacity:.8; transition: opacity .2s; }
+  .nav-links a:hover{ opacity:1; color:var(--coral); }
+  .nav-cta{ display:flex; gap:12px; align-items:center; }
+  .nav .btn{ padding: 11px 22px; font-size:.9rem; }
+  .menu-toggle{ display:none; background:none; font-size:1.6rem; color:var(--grafite); }
+
+  @media (max-width: 860px){
+    .nav-links{ display:none; }
+    .nav-cta .btn-secondary{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 90px 0 110px;
+    background:
+      radial-gradient(circle at 85% 10%, rgba(239,159,39,.18), transparent 45%),
+      radial-gradient(circle at 5% 90%, rgba(127,119,221,.14), transparent 40%),
+      var(--creme);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 60px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+    letter-spacing:-.01em;
+  }
+  .hero h1 span.accent{ color: var(--coral); }
+  .hero p.lead{
+    font-size: 1.15rem;
+    color: rgba(44,44,42,0.78);
+    max-width: 520px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin: 32px 0 26px; }
+  .social-proof{
+    display:flex; align-items:center; gap:12px;
+    font-size:.88rem; font-weight:500; color: rgba(44,44,42,.7);
+  }
+  .avatars{ display:flex; }
+  .avatars span{
+    width:32px;height:32px;border-radius:50%;
+    border:2px solid var(--creme);
+    margin-left:-10px;
+    background-size:cover; background-position:center;
+    display:inline-block;
+  }
+  .avatars span:first-child{ margin-left:0; }
+
+  .hero-visual{
+    position:relative;
+    border-radius: var(--radius-lg);
+    overflow:hidden;
+    box-shadow: var(--shadow-soft);
+    aspect-ratio: 4/5;
+  }
+  .hero-visual img{ width:100%; height:100%; object-fit:cover; }
+  .hero-visual::after{
+    content:'';
+    position:absolute; inset:0;
+    background: linear-gradient(0deg, rgba(44,44,42,.35), transparent 45%);
+  }
+  .floating-tag{
+    position:absolute;
+    background: var(--branco);
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    font-size:.85rem;
+    font-weight:600;
+    display:flex; align-items:center; gap:8px;
+    z-index:2;
+  }
+  .floating-tag.tag-1{ top: 10%; left:-8%; }
+  .floating-tag.tag-2{ bottom: 8%; right:-6%; }
+  .floating-tag .dot{ width:8px; height:8px; border-radius:50%; background: var(--teal); }
+
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero{ padding: 50px 0 70px; }
+    .floating-tag{ display:none; }
+  }
+
+  /* ---------- SEÇÃO GENÉRICA ---------- */
+  .section{ padding: 100px 0; }
+  .section-head{ max-width: 640px; margin-bottom: 56px; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+  .section-head h2{ font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+  .section-head p{ color: rgba(44,44,42,.72); font-size: 1.05rem; }
+
+  .bg-alt{ background: var(--creme-2); }
+
+  /* fade-in on scroll */
+  .reveal{ opacity:0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+  /* ---------- DOR ---------- */
+  .dor{
+    display:grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 60px;
+    align-items:center;
+  }
+  .dor-list li{
+    display:flex; gap:14px; align-items:flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(44,44,42,.1);
+    font-size:1.02rem;
+  }
+  .dor-list li:last-child{ border-bottom:none; }
+  .dor-icon{
+    flex-shrink:0; width:34px;height:34px;border-radius:50%;
+    background: rgba(216,90,48,.12); color: var(--coral);
+    display:flex; align-items:center; justify-content:center; font-weight:700;
+  }
+  @media (max-width: 900px){ .dor{ grid-template-columns:1fr; } }
+
+  /* ---------- BENEFÍCIOS ---------- */
+  .beneficios-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 26px;
+  }
+  .beneficio-card{
+    background: var(--branco);
+    border-radius: var(--radius-md);
+    padding: 34px 28px;
+    box-shadow: var(--shadow-soft);
+    transition: transform .3s ease;
+  }
+  .beneficio-card:hover{ transform: translateY(-6px); }
+  .beneficio-icon{
+    width:52px;height:52px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem; margin-bottom:18px;
+  }
+  .beneficio-card h3{ font-size:1.15rem; margin-bottom:8px; }
+  .beneficio-card p{ font-size:.94rem; color: rgba(44,44,42,.72); margin:0; }
+
+  /* ---------- CATEGORIAS ---------- */
+  .categorias-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .categoria-card{
+    border-radius: var(--radius-md);
+    padding: 30px 24px;
+    color:#fff;
+    min-height: 260px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    position:relative;
+    overflow:hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform .3s ease;
+  }
+  .categoria-card:hover{ transform: translateY(-6px); }
+  .categoria-card h3{ color:#fff; font-size:1.2rem; margin-bottom:6px; }
+  .categoria-card p{ color: rgba(255,255,255,.85); font-size:.88rem; margin-bottom:16px; }
+  .categoria-card .cat-link{
+    font-size:.85rem; font-weight:600;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .cat-igreja{ background: linear-gradient(160deg, var(--roxo), #5b52c9); }
+  .cat-pedagogico{ background: linear-gradient(160deg, var(--teal), #157e5c); }
+  .cat-empresas{ background: linear-gradient(160deg, var(--grafite), #16110f); }
+  .cat-personalizados{ background: linear-gradient(160deg, var(--pink), #b8355f); }
+  .categoria-card::before{
+    content:',';
+    position:absolute;
+    right:-6px; top:-46px;
+    font-family: var(--font-titulo);
+    font-size:9rem;
+    color: rgba(255,255,255,.14);
+  }
+  @media (max-width: 980px){ .categorias-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 560px){ .categorias-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- COMO FUNCIONA ---------- */
+  .funciona-tabs{
+    display:flex; gap:10px; margin-bottom: 40px;
+    background: var(--branco); padding:6px; border-radius:999px;
+    width:fit-content; box-shadow: var(--shadow-soft);
+  }
+  .funciona-tab{
+    background:transparent; padding:12px 24px; border-radius:999px;
+    font-weight:600; font-size:.92rem; color: rgba(44,44,42,.6);
+    transition: all .25s ease;
+  }
+  .funciona-tab.active{ background: var(--coral); color:#fff; }
+  .funciona-steps{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 26px;
+  }
+  .funciona-panel{ display:none; }
+  .funciona-panel.active{ display:grid; grid-template-columns: repeat(3,1fr); gap:26px; }
+  .step-card{
+    background: var(--branco); border-radius: var(--radius-md);
+    padding: 30px 24px; box-shadow: var(--shadow-soft);
+    position:relative;
+  }
+  .step-num{
+    font-family: var(--font-titulo); font-size:2.4rem; font-weight:700;
+    color: rgba(216,90,48,.18); line-height:1; margin-bottom:14px;
+  }
+  .step-card h3{ font-size:1.05rem; margin-bottom:8px; }
+  .step-card p{ font-size:.92rem; color: rgba(44,44,42,.7); margin:0; }
+  @media (max-width: 860px){
+    .funciona-panel.active{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- PROVA SOCIAL ---------- */
+  .depoimentos-grid{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+  }
+  .depoimento-card{
+    background: var(--branco);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+  }
+  .depoimento-card .quote-mark{
+    font-family: var(--font-titulo); font-size:3rem; color: var(--coral);
+    line-height:0; display:block; margin-bottom:10px;
+  }
+  .depoimento-card p.texto{ font-size:.96rem; color: rgba(44,44,42,.82); }
+  .depoimento-autor{ display:flex; align-items:center; gap:12px; margin-top: 18px; }
+  .depoimento-autor img{
+    width:46px;height:46px;border-radius:50%; object-fit:cover;
+  }
+  .depoimento-autor .nome{ font-weight:600; font-size:.92rem; }
+  .depoimento-autor .cargo{ font-size:.8rem; color: rgba(44,44,42,.6); }
+  @media (max-width: 900px){ .depoimentos-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- OFERTA ---------- */
+  .oferta-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .oferta-card{
+    border-radius: var(--radius-lg);
+    padding: 44px 36px;
+    position:relative;
+    overflow:hidden;
+  }
+  .oferta-pronto{
+    background: var(--branco);
+    box-shadow: var(--shadow-soft);
+    border: 2px solid rgba(216,90,48,.16);
+  }
+  .oferta-personalizado{
+    background: var(--grafite);
+    color: #fff;
+  }
+  .oferta-personalizado h3, .oferta-personalizado p{ color:#fff; }
+  .preco{
+    font-family: var(--font-titulo); font-size: 2.6rem; font-weight:700;
+    color: var(--coral); margin: 10px 0 18px;
+  }
+  .preco span{ font-size:1rem; font-weight:500; color: rgba(44,44,42,.6); font-family: var(--font-texto); }
+  .oferta-lista{ margin: 20px 0 28px; }
+  .oferta-lista li{ display:flex; gap:10px; padding: 6px 0; font-size:.94rem; }
+  .oferta-lista li::before{ content:'✓'; color: var(--teal); font-weight:700; }
+  .oferta-personalizado .oferta-lista li::before{ color: var(--ambar); }
+  @media (max-width: 860px){ .oferta-grid, .oferta-grid[style]{ grid-template-columns:1fr !important; } }
+
+  /* ---------- GARANTIA ---------- */
+  .garantia{
+    background: linear-gradient(120deg, var(--roxo), var(--pink));
+    border-radius: var(--radius-lg);
+    padding: 56px 48px;
+    color:#fff;
+    display:grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
+    align-items:center;
+  }
+  .garantia h2, .garantia p{ color:#fff; }
+  .garantia-badge{
+    width:96px;height:96px;border-radius:50%;
+    background: rgba(255,255,255,.16);
+    display:flex; align-items:center; justify-content:center;
+    font-size:2.4rem;
+    flex-shrink:0;
+  }
+  @media (max-width: 700px){
+    .garantia{ grid-template-columns:1fr; text-align:center; padding: 40px 28px; }
+    .garantia-badge{ margin: 0 auto; }
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width: 780px; margin: 0 auto; }
+  .faq-item{
+    background: var(--branco);
+    border-radius: var(--radius-md);
+    margin-bottom: 14px;
+    overflow:hidden;
+    box-shadow: 0 4px 14px -8px rgba(44,44,42,.12);
+  }
+  .faq-question{
+    width:100%;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 20px 26px;
+    background:none;
+    text-align:left;
+    font-weight:600;
+    font-size:1rem;
+    color: var(--grafite);
+  }
+  .faq-question .icon{
+    font-size:1.3rem; color: var(--coral);
+    transition: transform .3s ease;
+    flex-shrink:0; margin-left: 16px;
+  }
+  .faq-item.open .faq-question .icon{ transform: rotate(45deg); }
+  .faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .35s ease;
+  }
+  .faq-answer-inner{ padding: 0 26px 22px; font-size:.94rem; color: rgba(44,44,42,.75); }
+
+  /* ---------- LEADS ---------- */
+  .leads{
+    background: var(--grafite);
+    color:#fff;
+    border-radius: var(--radius-lg);
+    padding: 60px 50px;
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 40px;
+    align-items:center;
+  }
+  .leads h2, .leads p{ color:#fff; }
+  .leads .eyebrow{ color: var(--ambar); }
+  .leads .eyebrow::before{ color: var(--ambar); }
+  .leads-tags{ display:flex; gap:10px; flex-wrap:wrap; margin: 18px 0 0; }
+  .leads-tags span{
+    font-size:.78rem; padding:6px 14px; border-radius:999px;
+    background: rgba(255,255,255,.1); font-weight:500;
+  }
+  @media (max-width: 860px){ .leads{ grid-template-columns:1fr; text-align:center; padding: 44px 30px; } .leads-tags{ justify-content:center; } }
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{
+    text-align:center;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(239,159,39,.25), transparent 55%),
+      var(--creme-2);
+    border-radius: var(--radius-lg);
+    padding: 70px 40px;
+  }
+  .cta-final .btns{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top: 30px; }
+  .urgencia{
+    display:inline-flex; align-items:center; gap:8px;
+    background: rgba(216,90,48,.1); color: var(--coral);
+    padding: 8px 18px; border-radius:999px; font-size:.85rem; font-weight:600;
+    margin-bottom: 20px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--grafite);
+    color: rgba(255,255,255,.7);
+    padding: 60px 0 30px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+  footer .logo{ color:#fff; }
+  footer h4{ color:#fff; font-family: var(--font-texto); font-size:.9rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:16px; }
+  footer ul li{ margin-bottom:10px; font-size:.92rem; }
+  footer ul li a:hover{ color: var(--ambar); }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top: 24px; font-size:.82rem; flex-wrap:wrap; gap:10px;
+  }
+  @media (max-width: 760px){ .footer-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- WHATSAPP FLUTUANTE ---------- */
+  .whatsapp-float{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 62px; height:62px;
+    border-radius:50%;
+    background:#25D366;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 14px 30px -8px rgba(37,211,102,.6);
+    animation: pulse-wa 2.6s infinite;
+  }
+  .whatsapp-float svg{ width:32px; height:32px; }
+  @keyframes pulse-wa{
+    0%{ box-shadow: 0 0 0 0 rgba(37,211,102,.55); }
+    70%{ box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+    100%{ box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+
+  ::selection{ background: var(--coral); color:#fff; }
+
+  /* Paleta Alm mais viva */
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:360px;height:360px;border-radius:50%;
+    background:rgba(127,119,221,.16);
+    top:-130px;right:-90px;filter:blur(2px);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    width:250px;height:250px;border-radius:50%;
+    background:rgba(29,158,117,.13);
+    bottom:-110px;left:-80px;
+  }
+  .hero{position:relative;overflow:hidden;}
+  .hero .container{position:relative;z-index:1;}
+  .eyebrow{color:var(--pink);}
+  .btn-primary{background:linear-gradient(135deg,var(--coral),var(--pink));}
+  .btn-primary:hover{box-shadow:0 12px 28px rgba(212,83,126,.28);}
+  .section-head .accent, .accent{color:var(--coral);}
+  .solucao-card:nth-child(1){border-top:5px solid var(--coral);}
+  .solucao-card:nth-child(2){border-top:5px solid var(--ambar);}
+  .solucao-card:nth-child(3){border-top:5px solid var(--teal);}
+  .solucao-card:nth-child(4){border-top:5px solid var(--roxo);}
+  .categoria-card:nth-child(1){border-bottom:5px solid var(--pink);}
+  .categoria-card:nth-child(2){border-bottom:5px solid var(--teal);}
+  .categoria-card:nth-child(3){border-bottom:5px solid var(--ambar);}
+  .categoria-card:nth-child(4){border-bottom:5px solid var(--roxo);}
+  .oferta-card:nth-child(1){border-top:6px solid var(--coral);}
+  .oferta-card:nth-child(2){border-top:6px solid var(--teal);}
+  .oferta-card:nth-child(3){border-top:6px solid var(--roxo);}
+  .depoimentos-reais{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:38px;
+  }
+  .feedback-card{
+    background:#fff;border-radius:var(--radius);padding:30px;
+    box-shadow:var(--shadow-soft);position:relative;overflow:hidden;
+  }
+  .feedback-card:first-child{border-left:6px solid var(--pink);}
+  .feedback-card:last-child{border-left:6px solid var(--teal);}
+  .feedback-card::before{
+    content:"“";font-family:Georgia,serif;font-size:5rem;line-height:1;
+    position:absolute;right:20px;top:8px;color:rgba(239,159,39,.22);
+  }
+  .feedback-card p{font-size:1.05rem;line-height:1.7;color:var(--grafite);}
+  .feedback-card strong{display:block;margin-top:18px;color:var(--coral);}
+  @media(max-width:700px){.depoimentos-reais{grid-template-columns:1fr;}}
+
+
+/* Melhorias visuais aplicadas */
+.hero-grid{grid-template-columns:1fr 1fr;gap:80px;}
+.hero h1{font-size:clamp(2.2rem,4vw,3.3rem);}
+.hero-visual{
+  background:#f5ede4;
+  border-radius:36px;
+  padding:24px;
+  box-shadow:0 25px 60px rgba(0,0,0,.12);
+  aspect-ratio:auto;
+  overflow:visible;
+}
+.hero-visual img{
+  width:100%;
+  border-radius:24px;
+  object-fit:contain;
+}
+.hero-visual::after{display:none;}
+.garantia{
+  padding:70px 60px;
+  border-radius:40px;
+}
+.garantia img{
+  width:260px !important;
+  border-radius:50%;
+  border:6px solid rgba(255,255,255,.25);
+}
+
+</style>
+</head>
+<body>
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header>
+<div class="container nav">
+<a class="logo" href="#topo">
+<img alt="Alm" src="logo-alm-criativa.png"/>
+</a>
+<nav class="nav-links">
+<a href="#solucao">Soluções</a>
+<a href="#categorias">Áreas</a>
+<a href="#como-funciona">Como funciona</a>
+<a href="#depoimentos">Feedbacks</a>
+<a href="#faq">Dúvidas</a>
+</nav>
+<div class="nav-cta">
+<a class="btn btn-secondary" href="#oferta">Ver possibilidades</a>
+<!-- LINK HOTMART -->
+<a class="btn btn-primary" href="#" id="btnHotmartNav" rel="noopener" target="_blank">Acessar Hotmart</a>
+</div>
+</div>
+</header>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="topo">
+<div class="container hero-grid">
+<div class="reveal">
+<span class="eyebrow">Recursos criativos &amp; digitais</span>
+<h1>Ideias ganham forma, cor e identidade em <span class="accent">projetos criativos e profissionais.</span></h1>
+<p class="lead">Recursos digitais, materiais prontos e projetos personalizados para transformar ideias em criações bonitas, bem pensadas e cheias de propósito.</p>
+<div class="hero-ctas">
+<!-- LINK HOTMART -->
+<a class="btn btn-primary" href="#" id="btnHotmartHero" rel="noopener" target="_blank">Conhecer os materiais</a>
+<!-- LINK PORTFÓLIO -->
+<a class="btn btn-secondary" href="#" id="btnPortfolioHero" rel="noopener" target="_blank">Ver possibilidades</a>
+</div>
+<div class="social-proof">
+<span class="avatars">
+<span style="background-image:url('https://i.pravatar.cc/64?img=32')"></span>
+<span style="background-image:url('https://i.pravatar.cc/64?img=47')"></span>
+<span style="background-image:url('https://i.pravatar.cc/64?img=12')"></span>
+</span>
+        Materiais usados por professoras e igrejas em todo o Brasil
+      </div>
+</div>
+<div class="hero-visual reveal">
+<img alt="Mockup Alm Criativa" src="DESTAQUES.png"/>
+
+
+</div>
+</div>
+</section>
+<!-- ============================================================
+     DOR / PROBLEMA
+     ============================================================ -->
+<section class="section" id="dor">
+<div class="container dor">
+<div class="reveal">
+<span class="eyebrow">Criatividade com propósito</span>
+<h2>Sabe aquela ideia que você consegue imaginar, mas ainda não sabe como transformar em realidade?</h2>
+<p>A Alm transforma referências, desejos e necessidades em projetos visuais bem pensados, com identidade, cuidado e um olhar criativo para cada detalhe.</p>
+</div>
+<ul class="dor-list reveal">
+<li><span class="dor-icon">✦</span> Materiais desenvolvidos com qualidade visual e atenção aos detalhes</li>
+<li><span class="dor-icon">✦</span> Soluções para diferentes projetos, ocasiões e necessidades</li>
+<li><span class="dor-icon">✦</span> Opções prontas para quem busca praticidade</li>
+<li><span class="dor-icon">✦</span> Criações exclusivas para quem precisa de algo único</li>
+</ul>
+</div>
+</section>
+<!-- ============================================================
+     SOLUÇÃO / BENEFÍCIOS
+     ============================================================ -->
+<section class="section bg-alt" id="solucao">
+<div class="container">
+<div class="section-head center reveal">
+<span class="eyebrow">A solução</span>
+<h2>Você recebe pronto. A gente já pensou em tudo.</h2>
+<p>Cada material é planejado por quem já viveu sala de aula e ministério infantil. pronto pra imprimir, editar ou aplicar hoje mesmo.</p>
+</div>
+<div class="beneficios-grid">
+<div class="beneficio-card reveal">
+<div class="beneficio-icon" style="background:rgba(216,90,48,.12); color:var(--coral);">⏱</div>
+<h3>Praticidade</h3>
+<p>Encontre soluções prontas para usar, com acesso simples e organizado.</p>
+</div>
+<div class="beneficio-card reveal">
+<div class="beneficio-icon" style="background:rgba(29,158,117,.12); color:var(--teal);">✦</div>
+<h3>Design profissional</h3>
+<p>Projetos desenvolvidos com cuidado visual, composição e acabamento profissional.</p>
+</div>
+<div class="beneficio-card reveal">
+<div class="beneficio-icon" style="background:rgba(127,119,221,.12); color:var(--roxo);">✎</div>
+<h3>Soluções versáteis</h3>
+<p>Recursos criados para diferentes contextos, ideias, públicos e ocasiões.</p>
+</div>
+<div class="beneficio-card reveal">
+<div class="beneficio-icon" style="background:rgba(212,83,126,.12); color:var(--pink);">♥</div>
+<h3>Projetos exclusivos</h3>
+<p>Projetos sob encomenda pensados e criados exclusivamente para você.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     CATEGORIAS / SETORES
+     ============================================================ -->
+<section class="section" id="categorias">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Possibilidades criativas</span>
+<h2>Projetos para diferentes ideias e momentos.</h2>
+<p>Explore algumas das possibilidades e encontre o caminho ideal para o seu projeto.</p>
+</div>
+<div class="categorias-grid">
+<a class="categoria-card cat-igreja reveal" href="#" id="catIgreja">
+<h3>Igrejas</h3>
+<p>Ministério infantil, de mulheres e de homens</p>
+<span class="cat-link">Ver possibilidades →</span>
+</a>
+<a class="categoria-card cat-pedagogico reveal" href="#" id="catPedagogico">
+<h3>Recursos pedagógicos</h3>
+<p>Murais, atividades e materiais para sala de aula</p>
+<span class="cat-link">Ver possibilidades →</span>
+</a>
+<a class="categoria-card cat-empresas reveal" href="#" id="catEmpresas">
+<h3>Cartões para empresas</h3>
+<p>Cartões, certificados e materiais corporativos</p>
+<span class="cat-link">Falar no WhatsApp →</span>
+</a>
+<a class="categoria-card cat-personalizados reveal" href="#" id="catPersonalizados">
+<h3>Brindes e personalizados</h3>
+<p>Lembrancinhas, kits de festa e presentes sob medida</p>
+<span class="cat-link">Falar no WhatsApp →</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     COMO FUNCIONA
+     ============================================================ -->
+<section class="section bg-alt" id="como-funciona">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Como funciona</span>
+<h2>Escolha a opção ideal para o que você precisa.</h2>
+<p>Materiais prontos para acesso imediato ou projetos personalizados desenvolvidos sob encomenda.</p>
+</div>
+<div class="funciona-tabs reveal">
+<button class="funciona-tab active" data-tab="pronto">Produto pronto</button>
+<button class="funciona-tab" data-tab="personalizado">Projeto personalizado</button>
+</div>
+<div class="funciona-panel active" id="painel-pronto">
+<div class="step-card reveal"><div class="step-num">01</div><h3>Escolha o material</h3><p>Navegue pelo catálogo e encontre o kit ideal pra sua data ou ocasião.</p></div>
+<div class="step-card reveal"><div class="step-num">02</div><h3>Compre pela Hotmart</h3><p>Pagamento seguro e liberação automática, sem espera.</p></div>
+<div class="step-card reveal"><div class="step-num">03</div><h3>Acesse seu material</h3><p>Receba as orientações e utilize o arquivo conforme as características do produto adquirido.</p></div>
+</div>
+<div class="funciona-panel" id="painel-personalizado">
+<div class="step-card reveal"><div class="step-num">01</div><h3>Chame no WhatsApp</h3><p>Conte o que você precisa: tema, quantidade e prazo.</p></div>
+<div class="step-card reveal"><div class="step-num">02</div><h3>Receba seu orçamento</h3><p>Retorno em até 24h com valor e prazo de entrega.</p></div>
+<div class="step-card reveal"><div class="step-num">03</div><h3>Aprove e receba pronto</h3><p>Seu material exclusivo, feito sob medida pra sua necessidade.</p></div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     ESCOLHA SEU CAMINHO
+     ============================================================ -->
+<section class="section bg-alt" id="oferta">
+<div class="container">
+<div class="section-head center reveal">
+<span class="eyebrow">Onde encontrar</span>
+<h2>Escolha o caminho ideal para você.</h2>
+<p>Acesse os materiais disponíveis ou fale comigo para desenvolver um projeto exclusivo.</p>
+</div>
+<div class="oferta-grid" style="grid-template-columns:repeat(3,1fr);">
+<div class="oferta-card oferta-pronto reveal">
+<h3>Materiais digitais</h3>
+<p>Conheça os recursos digitais disponíveis para compra e acesso online.</p>
+<a class="btn btn-primary btn-block" href="#" id="btnHotmartOferta" rel="noopener" target="_blank">Acessar Hotmart</a>
+</div>
+<div class="oferta-card oferta-personalizado reveal">
+<h3>Projeto personalizado</h3>
+<p>Tem uma ideia específica? Conte o que precisa e solicite um projeto criado exclusivamente para você.</p>
+<a class="btn btn-whatsapp btn-block" href="#" id="btnWhatsappOferta" rel="noopener" target="_blank">Falar pelo WhatsApp</a>
+</div>
+<div class="oferta-card oferta-pronto reveal">
+<h3>Loja na Shopee</h3>
+<p>Confira os produtos e itens disponíveis diretamente na loja.</p>
+<a class="btn btn-primary btn-block" href="#" id="btnShopeeOferta" rel="noopener" target="_blank">Visitar loja na Shopee</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     GARANTIA
+     ============================================================ -->
+<section class="section">
+<div class="container">
+<div class="garantia reveal" style="grid-template-columns:220px 1fr;">
+<img alt="Personagem da Alm" src="ChatGPT Image 14 de jul. de 2026, 16_08_10.png" style="width:220px;border-radius:50%;box-shadow:var(--shadow-soft);"/>
+<div>
+<span class="eyebrow" style="color:#fff;">Alm</span>
+<h2>Criatividade para transformar ideias em projetos.</h2>
+<p>Cada detalhe é pensado para que a sua ideia encontre uma forma bonita, profissional e coerente com o que você deseja comunicar.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section bg-alt" id="depoimentos">
+<div class="container">
+<div class="section-head center reveal">
+<span class="eyebrow">Quem já confiou na Alm</span>
+<h2>Projetos que encantam também rendem mensagens assim.</h2>
+<p>Feedbacks reais de clientes que confiaram suas ideias à Alm.</p>
+</div>
+<div class="depoimentos-reais">
+<article class="feedback-card reveal">
+<p>Vou te indicar muitooooo. Seu trabalho é perfeito.</p>
+<strong>Amanda</strong>
+</article>
+<article class="feedback-card reveal">
+<p>Ana, queria te agradecer! Minhas amigas ficaram encantadas com a decoração, tudo perfeito. E te indiquei pra elas. Parabéns e obrigada.</p>
+<strong>Raquel</strong>
+</article>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section bg-alt" id="faq">
+<div class="container">
+<div class="section-head center reveal">
+<span class="eyebrow">Dúvidas frequentes</span>
+<h2>Informações importantes antes de escolher seu material.</h2>
+</div>
+<div class="faq-list reveal">
+<div class="faq-item">
+<button class="faq-question">Como recebo os produtos digitais?<span class="icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Nos produtos digitais adquiridos pela Hotmart, o acesso é disponibilizado conforme a confirmação do pagamento e as orientações da plataforma.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Os materiais são editáveis?<span class="icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Depende do produto. Alguns materiais são editáveis e outros são disponibilizados em formato final. Essa informação estará indicada na descrição de cada item.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Como funciona o orçamento personalizado?<span class="icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Entre em contato pelo WhatsApp e envie as principais informações sobre o projeto. Após a análise da solicitação, você receberá as orientações sobre possibilidades, prazo e orçamento.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Como funcionam os pagamentos?<span class="icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">As formas de pagamento variam conforme o canal de compra. Hotmart e Shopee seguem as opções disponibilizadas pelas próprias plataformas; projetos personalizados são orientados diretamente pelo WhatsApp.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Para quais tipos de projeto posso solicitar uma criação?<span class="icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">A Alm desenvolve projetos para diferentes públicos e finalidades. Se você tem uma ideia específica, envie sua proposta pelo WhatsApp para avaliarmos a melhor solução.</div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     CTA FINAL
+     ============================================================ -->
+<section class="section" id="cta-final">
+<div class="container">
+<div class="cta-final reveal">
+<!-- Ajuste ou remova esta urgência conforme a data comemorativa mais próxima -->
+<span class="urgencia">Recursos criativos &amp; projetos personalizados</span>
+<h2>Sua ideia pode começar por aqui.</h2>
+<p>Explore os materiais disponíveis ou fale comigo para criar algo exclusivamente para o seu projeto.</p>
+<div class="btns">
+<!-- LINK HOTMART -->
+<a class="btn btn-primary" href="#" id="btnHotmartFinal" rel="noopener" target="_blank">Acessar Hotmart</a>
+<!-- LINK WHATSAPP -->
+<a class="btn btn-whatsapp" href="#" id="btnWhatsappFinal" rel="noopener" target="_blank">Falar pelo WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<a class="logo" href="#topo">
+<img alt="Alm" src="logo-alm-criativa.png"/>
+</a>
+<p style="margin-top:16px; font-size:.92rem; max-width:320px;">Recursos criativos e digitais para escolas, igrejas, empresas e famílias.</p>
+</div>
+<div>
+<h4>Navegação</h4>
+<ul>
+<li><a href="#solucao">Soluções</a></li>
+<li><a href="#categorias">Áreas de atuação</a></li>
+<li><a href="#faq">Dúvidas frequentes</a></li>
+</ul>
+</div>
+<div>
+<h4>Contato</h4>
+<ul>
+<li><a href="#" id="btnWhatsappFooter">WhatsApp</a></li>
+<li><a href="#oferta">Hotmart, WhatsApp e Shopee</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Alm. Todos os direitos reservados.</span>
+<span>Feito com ♥ para quem cria com propósito.</span>
+</div>
+</div>
+</footer>
+<!-- ============================================================
+     BOTÃO FLUTUANTE DE WHATSAPP
+     ============================================================ -->
+<a aria-label="Falar no WhatsApp" class="whatsapp-float" href="#" id="btnWhatsappFloat" rel="noopener" target="_blank">
+<svg fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 3C9 3 3.3 8.6 3.3 15.5c0 2.6.8 5 2.1 7L3 29l6.7-2.3c1.9 1 4.1 1.6 6.3 1.6 7 0 12.7-5.6 12.7-12.5S23 3 16 3z" fill="#fff"></path>
+<path d="M16 4.6c-6.1 0-11 4.9-11 10.9 0 2.2.7 4.4 1.9 6.2L5.6 26l4.9-1.6c1.7 1 3.6 1.5 5.5 1.5 6.1 0 11-4.9 11-10.9S22.1 4.6 16 4.6z" fill="#25D366"></path>
+<path d="M22 18.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .2.2 2 3 4.7 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z" fill="#fff"></path>
+</svg>
+</a>
+<script>
+/* ============================================================
+   CONFIGURAÇÃO DE LINKS EXTERNOS
+   Substitua as 4 URLs abaixo pelos links reais.
+   Todos os botões correspondentes são atualizados automaticamente.
+   ============================================================ */
+const LINKS = {
+  hotmart:   "https://app.hotmart.com/membership/alm-criativa/products",
+  shopee:    "https://shopee.com.br/SEU-LINK-AQUI",
+  whatsapp:  "https://api.whatsapp.com/send/?text=Ol%C3%A1%21+Quero+um+or%C3%A7amento+personalizado&username=5531996655144&type=username&app_absent=0" + encodeURIComponent("Olá! Quero um orçamento personalizado"),
+  instagram: "https://www.instagram.com/SEU-INSTAGRAM-AQUI"
+};
+
+// Botões que usam link da Hotmart
+["btnHotmartNav","btnHotmartHero","btnHotmartOferta","btnHotmartFinal"].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.href = LINKS.hotmart;
+});
+
+// Links de navegação interna
+["btnPortfolioHero"].forEach(id=>{ const el=document.getElementById(id); if(el) el.href="#categorias"; });
+
+// Botões que usam link do WhatsApp
+["btnWhatsappOferta","btnWhatsappFinal","btnWhatsappFloat","btnWhatsappFooter","catEmpresas","catPersonalizados"].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.href = LINKS.whatsapp;
+});
+
+// Botão da Shopee
+["btnShopeeOferta"].forEach(id=>{ const el=document.getElementById(id); if(el) el.href=LINKS.shopee; });
+
+/* ---------- Scroll reveal (Intersection Observer) ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{ threshold: 0.15 });
+revealEls.forEach(el=>observer.observe(el));
+
+/* ---------- Como funciona: tabs ---------- */
+const tabs = document.querySelectorAll('.funciona-tab');
+tabs.forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.funciona-panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById('painel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  question.addEventListener('click', ()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+</body>
+</html>
